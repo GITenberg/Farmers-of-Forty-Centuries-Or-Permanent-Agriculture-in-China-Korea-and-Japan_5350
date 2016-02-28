@@ -1,0 +1,41 @@
+_repo: Farmers-of-Forty-Centuries-Or-Permanent-Agriculture-in-China-Korea-and-Japan_5350
+creator:
+  author:
+    agent_name: King, F. H. (Franklin Hiram)
+    alias: King, Franklin Hiram
+    birthdate: 1848
+    deathdate: 1911
+    gutenberg_agent_id: '1782'
+    url: http://www.gutenberg.org/2009/agents/1782
+    wikipedia: http://en.wikipedia.org/wiki/Franklin_Hiram_King
+description: "In 1909, American agronomist F.H. King toured China, Korea and Japan,\
+  \ studying traditional fertilization, tillage and general farming practices. He\
+  \ wrote his observations and findings in Farmers of Forty Centuries, Or Permanent\
+  \ Agriculture in China, Korea, and Japan (1911, published shortly after his death\
+  \ by his wife, Carrie Baker King; numerous facsimile reprintings, including Courier\
+  \ Dover Publications, ISBN 0-486-43609-8, and Rodale Press, ISBN 0-87857-867-6).\
+  \ King lived in an era preceding synthetic nitrogen fertilizer production and before\
+  \ the use of the internal combustion engine for farm machinery, yet he was profoundly\
+  \ interested in the challenge of farming the same soils in a 'permanent' manner,\
+  \ hence his interest in the agricultural practices of ancient cultures. In recent\
+  \ years, his book became an important organic farming reference.\n From Wikipedia\
+  \ (CC BY-SA)."
+gutenberg_issued: '2004-03-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '5350'
+  wikidata: Q5435827
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Agriculture -- Japan'
+- !lcc 'S'
+- !lcsh 'Agriculture -- China'
+- !lcsh 'Agriculture -- Korea'
+title: Farmers of Forty Centuries; Or, Permanent Agriculture in China, Korea, and
+  Japan
+url: http://www.gutenberg.org/ebooks/5350
+wikipedia:
+- https://en.wikipedia.org/wiki/Farmers_of_Forty_Centuries
