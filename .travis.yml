@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: A5Pqj4zc6US6WxZtaf3kQx8oiV+axM0u6F9TuGy7lJP/96+4S5VY0eKJ16XbLBIGs1BJ87bw/XnEW6sRfYkD+R+G7jVSQRqr4x4jgP2WBSQmXV673PBF68Z6fVXqNHAXxJXafwMBHDpHE0jGX55pL1L0fCJ6Oepf4A/mSgCPlGEUACO77jXz9xfaLgBfFrrlGWR+rdep6/pL8ABTiVMDBZDZis2rz30nmJE0zqCGQ8e3PwRc9vuoENENYoK6KAaoKk2hZYrfugRp6sxFVnf8te/Xsy6NxNxsxHBrfmeJ2BaK3KuLNmjHonUQJlmZXIr34f/MmdTIaxzEBkgxCJaHmQoHuMEsR94JLWkmzqiUBh8vdXrxPp72vsczM99KHTg8F9NgEbiZ971OCL7JBaeMH6IMKrpBI1v7G7+zGQMWvcU6FtUFT5BCdKt3cC2Lnrf9O3MM0mQR7F3oBrvZDRicDwseHgs+7ZYEn1h7gJ2nDn6ev868K535gaxrFpJ5eESG43UP4rl4tl/D/AOS4ded92xCC1XXSODibV/USlo/m98QKyKCATY1o5/R9rs4u42xpodRlZJDghtOLVcyMjs16CfPGIPbtPsp5Hr5dAWmk1uKr5Hhazj5CnRY3Y7poAXjpbNF6hoUoFwC8OF7ZseNVx4sIXznhQVEKsHpUwkG2D8=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Farmers-of-Forty-Centuries-Or-Permanent-Agriculture-in-China-Korea-and-Japan_5350
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
