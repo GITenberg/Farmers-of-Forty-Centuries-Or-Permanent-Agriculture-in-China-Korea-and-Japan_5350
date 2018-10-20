@@ -1,5 +1,5 @@
 _repo: Farmers-of-Forty-Centuries-Or-Permanent-Agriculture-in-China-Korea-and-Japan_5350
-_version: 0.2.0
+_version: 0.2.1
 covers:
 - cover_type: generated
   image_path: cover.png
@@ -40,6 +40,7 @@ subjects:
 - !lcc 'S'
 - !lcsh 'Agriculture -- China'
 - !lcsh 'Agriculture -- Korea'
+- GITenberg
 title: Farmers of Forty Centuries; Or, Permanent Agriculture in China, Korea, and
   Japan
 url: http://www.gutenberg.org/ebooks/5350
